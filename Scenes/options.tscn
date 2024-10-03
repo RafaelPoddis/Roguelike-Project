@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b54to0dw152e0"]
+
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_3kmu1"]
+[ext_resource type="FontFile" uid="uid://cwy7ilccsb2ar" path="res://Assets/Fonts/static/Orbitron-Bold.ttf" id="1_ave0r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbf88"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sggv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awwq6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kmu1")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -20.5
+offset_right = 45.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_colors/font_pressed_color = Color(0.054902, 0.054902, 0.054902, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ave0r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_kbf88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8sggv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_awwq6")
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

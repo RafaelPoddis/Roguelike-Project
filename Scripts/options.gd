@@ -13,3 +13,8 @@ func _process(_delta: float) -> void:
 
 func _on_back_pressed() -> void:
 	queue_free()
+
+
+func _on_controls_pressed() -> void:
+	var controlsScene = load("res://Scenes/controls_scene.tscn").instantiate()
+	get_tree().current_scene.add_child(controlsScene)

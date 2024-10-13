@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu5jasl4hlwt4"]
+
+[ext_resource type="FontFile" uid="uid://cwy7ilccsb2ar" path="res://Assets/Fonts/static/Orbitron-Bold.ttf" id="1_2utp4"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i76r4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvjxv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxdxh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24wpv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_i76r4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.313726)
+
+[node name="Paused" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = 78.0
+offset_right = 31.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("1_2utp4")
+theme_override_font_sizes/font_size = 48
+text = "PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -65.5
+offset_right = 158.0
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.847059, 0.00392157, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.694118, 0.0901961, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_2utp4")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_bvjxv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xxdxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_24wpv")
+text = "Resume"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.847059, 0.00392157, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.694118, 0.0901961, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_2utp4")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_bvjxv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xxdxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_24wpv")
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.847059, 0.00392157, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.694118, 0.0901961, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_2utp4")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_bvjxv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xxdxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_24wpv")
+text = "Quit to Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

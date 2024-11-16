@@ -18,3 +18,8 @@ func _on_back_pressed() -> void:
 func _on_controls_pressed() -> void:
 	var controlsScene = load("res://Scenes/controls_scene.tscn").instantiate()
 	get_tree().current_scene.add_child(controlsScene)
+
+
+func _on_audio_settings_pressed() -> void:
+	var audioScene = load("res://Scenes/audio_settings.tscn").instantiate()
+	get_tree().current_scene.add_child(audioScene)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dcasf4bcu7cae"]
+[gd_scene load_steps=18 format=4 uid="uid://dcasf4bcu7cae"]
 
 [ext_resource type="Script" path="res://Scripts/audio_settings.gd" id="1_0mr15"]
 [ext_resource type="Texture2D" uid="uid://clqc2d672ap0c" path="res://Assets/sprites/tilesets/floors/wooden.png" id="1_juv5s"]
@@ -99,9 +99,6 @@ sources/0 = SubResource("TileSetAtlasSource_tpue0")
 sources/1 = SubResource("TileSetAtlasSource_hustg")
 sources/2 = SubResource("TileSetAtlasSource_2s2v1")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yragk"]
-bg_color = Color(1, 0.194902, 0.741022, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1iqfd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -178,7 +175,6 @@ theme_override_constants/separation = 37
 
 [node name="Master" type="HSlider" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_yragk")
 max_value = 1.0
 step = 0.001
 script = ExtResource("6_f4jc2")

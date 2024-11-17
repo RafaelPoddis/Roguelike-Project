@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
+@onready var anim = $AnimatedSprite2D
 
 var SPEED = 150.0
+
+func _ready() -> void:
+	anim.play("idle")
+	
 
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
@@ -9,11 +14,24 @@ func _physics_process(_delta: float) -> void:
 	if direction:
 		velocity = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-		# velocity = direction * 0
-	
-	move_and_slide()
+		velocity = Vector2.ZERO
 
-func getAnim():
-	pass
+	move_and_slide()
+	getAnim(direction)
+
+
+func getAnim(direction: Vector2)->void:
+	if direction == Vector2.ZERO:
+		anim.play("idle")
+	else:
+		if direction.x > 0:
+			anim.play("right")
+			anim.flip_h = false
+		elif direction.x < 0:
+			anim.play("left")
+			anim.flip_h = true
+		elif direction.y > 0:
+			anim.play("down")
+		elif direction.y < 0:
+			anim.play("up")
+	

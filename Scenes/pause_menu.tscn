@@ -4,40 +4,35 @@
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_i76r4"]
 [ext_resource type="Shader" path="res://Shaders/pause_menu.gdshader" id="2_yxbfu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8nim"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7p5c"]
 shader = ExtResource("2_yxbfu")
-shader_parameter/amount = 2.4
+shader_parameter/amount = null
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvjxv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io32e"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxdxh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enb0e"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24wpv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4ix5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_i76r4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_a8nim")
+material = SubResource("ShaderMaterial_x7p5c")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.313726)
 
 [node name="Paused" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -31.0
+offset_left = 459.0
 offset_top = 78.0
-offset_right = 31.0
-offset_bottom = 101.0
-grow_horizontal = 2
+offset_right = 693.0
+offset_bottom = 139.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 3
@@ -46,17 +41,10 @@ theme_override_font_sizes/font_size = 48
 text = "PAUSED"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -158.0
-offset_top = -65.5
-offset_right = 158.0
-offset_bottom = 65.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 418.0
+offset_top = 254.5
+offset_right = 734.0
+offset_bottom = 385.5
 
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -66,9 +54,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_2utp4")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/hover = SubResource("StyleBoxFlat_bvjxv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xxdxh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_24wpv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_io32e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enb0e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4ix5")
 text = "Resume"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
@@ -79,9 +67,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_2utp4")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/hover = SubResource("StyleBoxFlat_bvjxv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xxdxh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_24wpv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_io32e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enb0e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4ix5")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
@@ -92,9 +80,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_2utp4")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/hover = SubResource("StyleBoxFlat_bvjxv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xxdxh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_24wpv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_io32e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enb0e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4ix5")
 text = "Quit to Main Menu"
 
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
